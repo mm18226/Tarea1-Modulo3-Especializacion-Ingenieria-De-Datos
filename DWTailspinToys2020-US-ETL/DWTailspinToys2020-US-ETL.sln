@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DWTailspinToys2020-US", "DWTailspinToys2020-US\DWTailspinToys2020-US.dtproj", "{2ED50222-A354-5867-C58A-F1A59642E031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ED50222-A354-5867-C58A-F1A59642E031}.Development|Default.ActiveCfg = Development
+		{2ED50222-A354-5867-C58A-F1A59642E031}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42F4A61F-4E3B-496B-9F35-FE93859E8D8C}
+	EndGlobalSection
+EndGlobal
