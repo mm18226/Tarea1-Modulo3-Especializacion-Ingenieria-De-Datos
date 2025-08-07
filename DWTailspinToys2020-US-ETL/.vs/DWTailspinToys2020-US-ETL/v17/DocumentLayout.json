@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\FactSales.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|solutionrelative:DWTailspinToys2020-US\\FactSales.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\DimState.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|solutionrelative:DWTailspinToys2020-US\\DimState.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\DimProduct.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|solutionrelative:DWTailspinToys2020-US\\DimProduct.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\Orquestador.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{2ED50222-A354-5867-C58A-F1A59642E031}|DWTailspinToys2020-US\\DWTailspinToys2020-US.dtproj|solutionrelative:DWTailspinToys2020-US\\Orquestador.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +26,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Orquestador.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\Orquestador.dtsx",
+              "RelativeDocumentMoniker": "DWTailspinToys2020-US\\Orquestador.dtsx",
+              "ToolTip": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\Orquestador.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "DWTailspinToys2020-US\\Orquestador.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-07T01:22:02.192Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FactSales.dtsx [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\FactSales.dtsx",
+              "RelativeDocumentMoniker": "DWTailspinToys2020-US\\FactSales.dtsx",
+              "ToolTip": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\FactSales.dtsx [Dise\u00F1o]",
+              "RelativeToolTip": "DWTailspinToys2020-US\\FactSales.dtsx [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-08-07T00:44:17.708Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DimState.dtsx [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\DimState.dtsx",
               "RelativeDocumentMoniker": "DWTailspinToys2020-US\\DimState.dtsx",
@@ -34,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DimProduct.dtsx [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ariel\\OneDrive\\Documentos\\GitHub\\Tarea1-Modulo3-Especializacion-Ingenieria-De-Datos\\DWTailspinToys2020-US-ETL\\DWTailspinToys2020-US\\DimProduct.dtsx",
               "RelativeDocumentMoniker": "DWTailspinToys2020-US\\DimProduct.dtsx",

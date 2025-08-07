@@ -1,0 +1,1075 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/6/2025 6:44:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ARIEL"
+  DTS:CreatorName="ARIEL\ariel"
+  DTS:DTSID="{BD42CABA-F9D0-4245-B0B4-1EE45B4AED7D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.1"
+  DTS:LocaleID="17418"
+  DTS:ObjectName="FactSales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{F73185BB-6371-4379-B208-E645F96B138C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{0C652E3C-B1D9-4CF9-BB1E-CD298B4BA9D6}"
+      DTS:ObjectName="(localdb)\MSSQLLocalDB.DWTailspinToys2020-US">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DWTailspinToys2020-US;Integrated Security=True;Application Name=SSIS-FactSales-{0C652E3C-B1D9-4CF9-BB1E-CD298B4BA9D6}(localdb)\MSSQLLocalDB.DWTailspinToys2020-US;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{366A1669-92A1-466C-B15F-07C00EAB181D}"
+      DTS:ObjectName="(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DWTailspinToys2020-US;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-FactSales-{366A1669-92A1-466C-B15F-07C00EAB181D}(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.TailspinToys2020-US]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{D68F2B62-AC8F-4848-B7E6-4CCEB6F8DB64}"
+      DTS:ObjectName="(localdb)\MSSQLLocalDB.TailspinToys2020-US">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TailspinToys2020-US;Integrated Security=True;Application Name=SSIS-FactSales-{D68F2B62-AC8F-4848-B7E6-4CCEB6F8DB64}(localdb)\MSSQLLocalDB.TailspinToys2020-US;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Llenar FactSales"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{D90BD126-4A8B-4EEB-8281-8474820D4292}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar FactSales"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Llenar FactSales\Cargar FactSales"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Cargar FactSales"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."FactSales"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar FactSales\Cargar FactSales.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[OrderNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="OrderNumber"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[OrderNumber]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderNumber]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[OrderDateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrderDateKey"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderDateKey]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[ShipDateKey]"
+                      cachedDataType="i4"
+                      cachedName="ShipDateKey"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[ShipDateKey]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ShipDateKey]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[Quantity]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[UnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="UnitPrice"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[DiscountAmount]"
+                      cachedDataType="numeric"
+                      cachedName="DiscountAmount"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[DiscountAmount]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[DiscountAmount]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[PromotionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="PromotionCode"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[PromotionCode]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[PromotionCode]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[ProductKey]"
+                      lineageId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].Columns[StateKey]"
+                      cachedDataType="i4"
+                      cachedName="StateKey"
+                      externalMetadataColumnId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[CustomerStateKey]"
+                      lineageId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[SalesKey]"
+                      dataType="i4"
+                      name="SalesKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[OrderNumber]"
+                      dataType="wstr"
+                      length="10"
+                      name="OrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[OrderDateKey]"
+                      dataType="i4"
+                      name="OrderDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[ShipDateKey]"
+                      dataType="i4"
+                      name="ShipDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[CustomerStateKey]"
+                      dataType="i4"
+                      name="CustomerStateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[DiscountAmount]"
+                      dataType="numeric"
+                      name="DiscountAmount"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET].ExternalColumns[PromotionCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="PromotionCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Llenar FactSales\Cargar FactSales.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Cargar FactSales.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Cargar FactSales.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Cargar FactSales.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Llenar FactSales\Leer Tabla Sales"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Leer Tabla Sales"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    s.OrderNumber,
+    CAST(FORMAT(s.OrderDate, 'yyyyMMdd') AS INT) AS OrderDateKey,
+    CAST(FORMAT(s.ShipDate, 'yyyyMMdd') AS INT) AS ShipDateKey,
+    s.CustomerStateID,
+    s.ProductID,
+    s.Quantity,
+    s.UnitPrice,
+    s.DiscountAmount,
+    CASE 
+        WHEN s.PromotionCode IS NULL THEN 'Sin promoción'
+        ELSE s.PromotionCode
+    END AS PromotionCode
+FROM Sales s;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar FactSales\Leer Tabla Sales.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.TailspinToys2020-US]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.TailspinToys2020-US]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[OrderNumber]"
+                      length="10"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderNumber]"
+                      name="OrderNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[OrderDateKey]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[OrderDateKey]"
+                      name="OrderDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ShipDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[ShipDateKey]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ShipDateKey]"
+                      name="ShipDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[CustomerStateID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[CustomerStateID]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[CustomerStateID]"
+                      name="CustomerStateID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[ProductID]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[Quantity]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[UnitPrice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[DiscountAmount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[DiscountAmount]"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[DiscountAmount]"
+                      name="DiscountAmount"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[PromotionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[PromotionCode]"
+                      length="20"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[PromotionCode]"
+                      name="PromotionCode"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[OrderNumber]"
+                      dataType="wstr"
+                      length="10"
+                      name="OrderNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[OrderDateKey]"
+                      dataType="i4"
+                      name="OrderDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[ShipDateKey]"
+                      dataType="i4"
+                      name="ShipDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[CustomerStateID]"
+                      dataType="i4"
+                      name="CustomerStateID" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[DiscountAmount]"
+                      dataType="numeric"
+                      name="DiscountAmount"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].ExternalColumns[PromotionCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="PromotionCode" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[OrderNumber]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[OrderNumber]"
+                      name="OrderNumber" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[OrderDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[OrderDateKey]"
+                      name="OrderDateKey" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ShipDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ShipDateKey]"
+                      name="ShipDateKey" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[CustomerStateID]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[CustomerStateID]"
+                      name="CustomerStateID" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[UnitPrice]"
+                      dataType="numeric"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[DiscountAmount]"
+                      dataType="numeric"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[DiscountAmount]"
+                      name="DiscountAmount"
+                      precision="9"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[PromotionCode]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[PromotionCode]"
+                      name="PromotionCode" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Llenar FactSales\Lookup CustomerState"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Lookup CustomerState"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimState]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimState]) [refTable]
+where [refTable].[StateID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeZone" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[CustomerStateID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar FactSales\Lookup CustomerState.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda].Columns[CustomerStateID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerStateID"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[CustomerStateID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">StateID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas coincidentes de búsqueda].Columns[StateKey]"
+                      name="StateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">StateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Llenar FactSales\Lookup Product"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Lookup Product"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimProduct]) [refTable]
+where [refTable].[ProductID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductCategory" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ItemGroup" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KitType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Channels" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Demographic" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RetailPrice" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ProductID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Llenar FactSales\Lookup Product.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\MSSQLLocalDB.DWTailspinToys2020-US1]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">ProductID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">ProductKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Llenar FactSales.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Llenar FactSales\Lookup Product.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Llenar FactSales\Lookup CustomerState.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Llenar FactSales.Paths[Salida de entradas coincidentes de búsqueda1]"
+              endId="Package\Llenar FactSales\Cargar FactSales.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Llenar FactSales\Lookup Product.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Llenar FactSales.Paths[Salida de origen de ADO NET]"
+              endId="Package\Llenar FactSales\Lookup CustomerState.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Llenar FactSales\Leer Tabla Sales.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Llenar FactSales"
+          TopLeft="248,207" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Llenar FactSales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Llenar FactSales\Leer Tabla Sales"
+          TopLeft="163,123" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Llenar FactSales\Cargar FactSales"
+          TopLeft="591,408" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Llenar FactSales\Lookup CustomerState"
+          TopLeft="338,215" />
+        <EdgeLayout
+          Id="Package\Llenar FactSales.Paths[Salida de origen de ADO NET]"
+          TopLeft="244,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189.5,50"
+              Start="0,0"
+              End="189.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="185.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="185.5,25"
+                    Point2="189.5,25"
+                    Point3="189.5,29" />
+                  <mssgle:LineSegment
+                    End="189.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Llenar FactSales\Lookup Product"
+          TopLeft="367,313" />
+        <EdgeLayout
+          Id="Package\Llenar FactSales.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="433.5,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,56"
+              Start="0,0"
+              End="11.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="7.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,28"
+                    Point2="11.5,28"
+                    Point3="11.5,32" />
+                  <mssgle:LineSegment
+                    End="11.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.0690234375,33,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Llenar FactSales.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="445,355">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="228.5,53"
+              Start="0,0"
+              End="228.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="224.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="224.5,26.5"
+                    Point2="228.5,26.5"
+                    Point3="228.5,30.5" />
+                  <mssgle:LineSegment
+                    End="228.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.4309765625,31.5,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar FactSales\Leer Tabla Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar FactSales\Cargar FactSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar FactSales\Lookup CustomerState">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimState]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Llenar FactSales\Lookup Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProduct]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
